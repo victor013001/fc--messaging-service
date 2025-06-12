@@ -1,4 +1,4 @@
-package com.example.non_reactive_archetype.config;
+package com.example.fc_messaging_service.config;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

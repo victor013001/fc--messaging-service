@@ -1,4 +1,4 @@
-package com.example.non_reactive_archetype.domain.constants;
+package com.example.fc_messaging_service.domain.constants;
 
 import lombok.experimental.UtilityClass;
 

@@ -1,9 +1,9 @@
-package com.example.non_reactive_archetype.domain.enums;
+package com.example.fc_messaging_service.domain.enums;
 
-import static com.example.non_reactive_archetype.domain.constants.HttpStatusConst.BAD_REQUEST_INT;
-import static com.example.non_reactive_archetype.domain.constants.HttpStatusConst.SERVER_ERROR_INT;
+import static com.example.fc_messaging_service.domain.constants.HttpStatusConst.BAD_REQUEST_INT;
+import static com.example.fc_messaging_service.domain.constants.HttpStatusConst.SERVER_ERROR_INT;
 
-import com.example.non_reactive_archetype.domain.constants.MsgConst;
+import com.example.fc_messaging_service.domain.constants.MsgConst;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

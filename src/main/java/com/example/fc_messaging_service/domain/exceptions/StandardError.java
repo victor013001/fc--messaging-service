@@ -1,4 +1,4 @@
-package com.example.non_reactive_archetype.domain.exceptions;
+package com.example.fc_messaging_service.domain.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;

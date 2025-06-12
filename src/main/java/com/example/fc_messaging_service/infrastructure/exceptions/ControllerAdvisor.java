@@ -1,10 +1,10 @@
-package com.example.non_reactive_archetype.infrastructure.exceptions;
+package com.example.fc_messaging_service.infrastructure.exceptions;
 
-import static com.example.non_reactive_archetype.domain.enums.ServerResponses.SERVER_ERROR;
+import static com.example.fc_messaging_service.domain.enums.ServerResponses.SERVER_ERROR;
 
-import com.example.non_reactive_archetype.domain.exceptions.StandardError;
-import com.example.non_reactive_archetype.domain.exceptions.StandardException;
-import com.example.non_reactive_archetype.infrastructure.entrypoint.dto.DefaultServerResponse;
+import com.example.fc_messaging_service.domain.exceptions.StandardError;
+import com.example.fc_messaging_service.domain.exceptions.StandardException;
+import com.example.fc_messaging_service.infrastructure.entrypoint.dto.DefaultServerResponse;
 import java.time.LocalDateTime;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

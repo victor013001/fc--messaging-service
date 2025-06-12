@@ -1,6 +1,6 @@
-package com.example.non_reactive_archetype.domain.exceptions;
+package com.example.fc_messaging_service.domain.exceptions;
 
-import com.example.non_reactive_archetype.domain.enums.ServerResponses;
+import com.example.fc_messaging_service.domain.enums.ServerResponses;
 import java.time.LocalDateTime;
 import lombok.Getter;
 
