@@ -2,4 +2,9 @@ spring:
   application:
     name: FC Messaging Service
   profiles:
-    active: ${ACTIVE_PROFILE:none}
+    active: ${ACTIVE_PROFILE:default}
+
+twilio:
+  accountSid: ${ACCOUNT_SID:none}
+  authToken: ${AUTH_TOKEN:none}
+  fromNumber: ${FROM_NUMBER:none}

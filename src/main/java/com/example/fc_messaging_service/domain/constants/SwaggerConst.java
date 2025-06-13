@@ -3,4 +3,6 @@ package com.example.fc_messaging_service.domain.constants;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public class SwaggerConst {}
+public class SwaggerConst {
+  public static final String SEND_MESSAGE_OPERATION = "Send message";
+}
