@@ -3,6 +3,7 @@ package com.example.fc_messaging_service.infrastructure.adapters.persistence.ada
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.example.fc_messaging_service.domain.model.OrderPin;
 import com.example.fc_messaging_service.infrastructure.adapters.persistence.entity.OrderPinEntity;
@@ -30,5 +31,15 @@ class OrderPinPersistenceAdapterTest {
     var orderPin = new OrderPin(1L, 1234);
     orderPinPersistenceAdapter.save(orderPin);
     verify(orderPinRepository).save(any(OrderPinEntity.class));
+  }
+
+  @Test
+  void validPin() {
+    var orderId = 1L;
+    var pin = 1234;
+    when(orderPinRepository.existsByOrderIdAndPin(orderId, pin)).thenReturn(true);
+    var exists = orderPinPersistenceAdapter.existsByOrderIdAndPin(orderId, pin);
+    assertTrue(exists);
+    verify(orderPinRepository).existsByOrderIdAndPin(orderId, pin);
   }
 }

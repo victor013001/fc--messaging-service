@@ -1,7 +1,9 @@
 package com.example.fc_messaging_service.application.service.handler;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
+import static org.mockito.Mockito.when;
 
 import com.example.fc_messaging_service.domain.api.MessagingServicePort;
 import org.junit.jupiter.api.Test;
@@ -13,11 +15,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 class MessagingApplicationServiceImplTest {
 
-  @Mock
-  private MessagingServicePort messagingServicePort;
+  @Mock private MessagingServicePort messagingServicePort;
 
-  @InjectMocks
-  private MessagingApplicationServiceImpl messagingApplicationService;
+  @InjectMocks private MessagingApplicationServiceImpl messagingApplicationService;
 
   @Test
   void sendMessage_shouldDelegateToMessagingServicePort() {
@@ -28,5 +28,15 @@ class MessagingApplicationServiceImplTest {
 
     verify(messagingServicePort).sendOrderPin(orderId, userId);
     verifyNoMoreInteractions(messagingServicePort);
+  }
+
+  @Test
+  void validPin() {
+    var orderId = 1L;
+    var pin = 1234;
+    when(messagingServicePort.isValidPin(orderId, pin)).thenReturn(true);
+    var exists = messagingApplicationService.validPin(orderId, pin);
+    assertTrue(exists);
+    verify(messagingServicePort).isValidPin(orderId, pin);
   }
 }

@@ -24,6 +24,11 @@ public class MessagingUseCase implements MessagingServicePort {
     smsServicePort.sendSms(userPhone, createPinMessage(orderId, pin));
   }
 
+  @Override
+  public Boolean isValidPin(Long orderId, Integer pin) {
+    return orderPinPersistencePort.existsByOrderIdAndPin(orderId, pin);
+  }
+
   private String createPinMessage(Long orderId, Integer pin) {
     return String.format(
         "Your order with ID %d is ready. You will receive it shortly. Please provide the following 4-digit PIN to receive it: %04d",

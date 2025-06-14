@@ -22,4 +22,10 @@ public class OrderPinPersistenceAdapter implements OrderPinPersistencePort {
     log.info("{} Saving pin for order: {}.", LOG_PREFIX, orderPin.orderId());
     orderPinRepository.save(orderPinEntityMapper.toEntity(orderPin));
   }
+
+  @Override
+  public Boolean existsByOrderIdAndPin(Long orderId, Integer pin) {
+    log.info("{} Valid pin for order: {}.", LOG_PREFIX, orderId);
+    return orderPinRepository.existsByOrderIdAndPin(orderId, pin);
+  }
 }

@@ -1,5 +1,6 @@
 package com.example.fc_messaging_service.domain.usecase;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.ArgumentMatchers.eq;
@@ -46,5 +47,15 @@ class MessagingUseCaseTest {
                 message ->
                     message.contains("Your order with ID 1 is ready.")
                         && message.matches(".*\\d{4}$")));
+  }
+
+  @Test
+  void validPin() {
+    var orderId = 1L;
+    var pin = 1234;
+    when(orderPinPersistencePort.existsByOrderIdAndPin(orderId, pin)).thenReturn(true);
+    var exists = messagingUseCase.isValidPin(orderId, pin);
+    assertTrue(exists);
+    verify(orderPinPersistencePort).existsByOrderIdAndPin(orderId, pin);
   }
 }
