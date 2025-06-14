@@ -15,4 +15,9 @@ public class MessagingApplicationServiceImpl implements MessagingApplicationServ
   public void sendMessage(Long orderId, Long userId) {
     messagingServicePort.sendOrderPin(orderId, userId);
   }
+
+  @Override
+  public Boolean validPin(Long orderId, Integer pin) {
+    return messagingServicePort.isValidPin(orderId, pin);
+  }
 }
