@@ -15,9 +15,9 @@ import static com.example.fc_messaging_service.domain.constants.SwaggerConst.SEN
 import static com.example.fc_messaging_service.domain.constants.SwaggerConst.VALID_PIN_OPERATION;
 import static com.example.fc_messaging_service.domain.enums.ServerResponses.MESSAGE_SEND_SUCCESSFULLY;
 
+import com.example.fc_messaging_service.application.dto.DefaultServerResponse;
 import com.example.fc_messaging_service.application.service.MessagingApplicationService;
 import com.example.fc_messaging_service.domain.exceptions.StandardError;
-import com.example.fc_messaging_service.infrastructure.entrypoint.dto.DefaultServerResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

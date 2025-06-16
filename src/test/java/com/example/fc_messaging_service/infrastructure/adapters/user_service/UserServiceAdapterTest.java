@@ -3,8 +3,8 @@ package com.example.fc_messaging_service.infrastructure.adapters.user_service;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.example.fc_messaging_service.application.dto.DefaultServerResponse;
 import com.example.fc_messaging_service.infrastructure.adapters.user_service.feign.UserFeignClient;
-import com.example.fc_messaging_service.infrastructure.entrypoint.dto.DefaultServerResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
