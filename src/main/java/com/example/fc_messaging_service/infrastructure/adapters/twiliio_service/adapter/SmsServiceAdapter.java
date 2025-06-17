@@ -14,6 +14,6 @@ public class SmsServiceAdapter implements SmsServicePort {
 
   @Override
   public void sendSms(String to, String message) {
-    Message.creator(new PhoneNumber(to), new PhoneNumber(fromNumber), message).create();
+    Message.creator(new PhoneNumber("+18777804236"), new PhoneNumber(fromNumber), message).create();
   }
 }
